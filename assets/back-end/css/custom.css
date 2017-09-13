@@ -1,0 +1,5 @@
+/*** Custom css ***/
+
+.panel_toolbox > li {
+    float: right;
+}
