@@ -11,18 +11,18 @@ class stock_controlador extends CI_Controller {
       $data = array();
       $this->load->model('stock_model');
       $data['stock_controlador'] = $this->stock_model->obtener_todos($ordenar_por);
-      $this->load->view('vistas/header');
-      $this->load->view('vistas/index', $data);
-      $this->load->view('vistas/footer');
+      $this->load->view('vistas/administracion/header');
+      $this->load->view('vistas/administracion/index', $data);
+      $this->load->view('vistas/administracion/footer');
    }
    public function ver($idProducto){
       $data = array();
       $this->load->model('stock_model');
       $detalle = $this->stock_model->obtener_por_id($idProducto);
       $data['detalle'] = $detalle;
-      $this->load->view('vistas/header');
-      $this->load->view('vistas/ver', $data);
-      $this->load->view('vistas/footer');
+      $this->load->view('vistas/administracion/header');
+      $this->load->view('vistas/administracion/ver', $data);
+      $this->load->view('vistas/administracion/footer');
    }
    public function guardar($idProducto=null){
       $data = array(); 
@@ -41,9 +41,9 @@ class stock_controlador extends CI_Controller {
          $data['cantMax'] = null;
          $data['cantMin'] = null;
       }
-      $this->load->view('vistas/header');
-      $this->load->view('vistas/guardar', $data);
-      $this->load->view('vistas/footer');
+      $this->load->view('vistas/administracion/header');
+      $this->load->view('vistas/administracion/guardar', $data);
+      $this->load->view('vistas/administracion/footer');
    }
    public function guardar_post($idProducto=null){
       if($this->input->post()){
@@ -80,9 +80,9 @@ class stock_controlador extends CI_Controller {
       $data = array();
       $this->load->model('stock_model');
       $data['stock_controlador'] = $this->stock_model->buscarProducto($nombre);
-      $this->load->view('vistas/header');
-      $this->load->view('vistas/index', $data);
-      $this->load->view('vistas/footer');
+      $this->load->view('vistas/administracion/header');
+      $this->load->view('vistas/administracion/index', $data);
+      $this->load->view('vistas/administracion/footer');
    }
    
 	/*

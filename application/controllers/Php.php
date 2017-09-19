@@ -34,8 +34,9 @@ class Php extends CI_Controller {
                             $data = array();
                             $this->load->model('stock_model');
                             $data['stock_controlador'] = $this->stock_model->obtener_todos($ordenar_por);
-                            $this->load->view('vistas/header');
-                            $this->load->view('vistas/index', $data);
+                            $this->load->view('vistas/administracion/header');
+                            $this->load->view('vistas/administracion/index', $data);
+                            $this->load->view('vistas/administracion/footer');
                             /*
                             $this->load->view('front-end/Usuario/index', $data);
                             // $this->load->view('vistas/footer');
@@ -49,9 +50,9 @@ class Php extends CI_Controller {
                                 break;
 			case '2':
                                 $_SESSION['valor']= $ExisteUsuarioyPassoword->idTipoUsuario;
-                                $this->data['title'] = $this->lang->line('title_login');
-                                $this->data['subView'] = 'admin/Administrador';
-                                $this->load->view('front-end/components/plantilla_administrador', $this->data);
+                                $this->load->view('vistas/usuario/header');
+                                $this->load->view('vistas/usuario/usuario');
+                                $this->load->view('vistas/usuario/footer');
                                 break;
 			case '3':
 				$_SESSION['valor']= $ExisteUsuarioyPassoword->idTipoUsuario; 
