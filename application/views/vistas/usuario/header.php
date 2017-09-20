@@ -51,9 +51,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li class="active" ><a href="<?php echo base_url() ?>usuario.php">Mis pedidos pendientes</a></li>
-                    <li ><a href="nuevo_pedido.php">Nuevo Pedido</a></li>
-                    <li><a href="pedidos_retirados.php">Pedidos Retirados</a></li>
+                    <li class="active" ><a href="<?php echo base_url() ?>ctrUsuario/pedidosRealizados">Mis pedidos realizados</a></li>
+                    <li ><a href="<?php echo base_url() ?>ctrUsuario/nuevoPedido">Nuevo Pedido</a></li>
+                    <li><a href="<?php echo base_url() ?>ctrUsuario/pedidosRetirados">Pedidos Retirados</a></li>
                                    
                     <li><a class="btn" href="<?php echo base_url(''); ?>">Salir</a></li>
                 </ul>
