@@ -1,0 +1,52 @@
+body,html{
+    height:100%; /*Siempre es necesario cuando trabajamos con alturas*/
+    }
+.contenedorUsuario{
+    margin-top: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.caja {
+   margin:20px auto 40px auto;	
+   border:1px solid #d9d9d9;
+   height:30px;
+   overflow: hidden;
+   width: 230px;
+   position:relative;
+}
+select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+select:focus{ outline: none;}
+
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+}
+
+.piePagina{
+color: #FFF;
+background: #000;
+position:fixed; /*El div será ubicado con relación a la pantalla*/
+bottom: 0 !important;
+bottom: -1px;
+left:0px; /*A la derecha deje un espacio de 0px*/
+right:0px; /*A la izquierda deje un espacio de 0px*/
+height:80px; /*alto del div*/
+z-index:0;
+ }

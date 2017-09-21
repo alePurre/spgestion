@@ -18,14 +18,21 @@
                 <br>    
                 <h4>Filtrar búsqueda:</h4>
                 <br> 
-                Rubro:
-                <br>
-                <select>
-                    <option value="volvo">Seleccione el Rubro</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                  </select>
+                <div>
+                    <label>Rubro:</label>
+                    <select class="caja" placeholder="Seleccione un rubro">
+                        <option value="volvo">Seleccione el Rubro</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                    <form>
+                        <label>Buscar:</lavel>
+                        <input type="text" name="detalle" placeholder="Códifgo de producto">
+                        <input type="text" name="detalle" placeholder="Nombre del producto">
+                        <input type="submit" class="btn btn-info" value="Buscar" />
+                    </form> 
+                </div>
                <!--
                 <table>
                      <thead>
@@ -122,10 +129,10 @@
             <table>
                  <tr height="60px">
                      <td align="center" width="100">
-                        <input type="submit" class="btn btn-primary" value="Enviar">
+                        <input type="submit" class="btn btn-info" value="Enviar">
                      </td>
                      <td align="center" width="100">
-                         <a href="usuario.php"> <input type="button" class="btn btn-primary" value="Cancelar"></a>
+                         <a href="usuario.php"> <input type="button" class="btn btn-info" value="Cancelar"></a>
                      </td>
                  </tr>
             </table>
