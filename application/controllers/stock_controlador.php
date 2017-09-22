@@ -7,7 +7,7 @@ class stock_controlador extends CI_Controller {
       parent::__construct();
    }
    public function index() {
-	  $ordenar_por="stock";
+      $ordenar_por="stock";
       $data = array();
       $this->load->model('stock_model');
       $data['stock_controlador'] = $this->stock_model->obtener_todos($ordenar_por);

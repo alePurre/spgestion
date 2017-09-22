@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "home";
 $route['404_override'] = '';
-
-
+$route['pag_controlador/(:num)'] = 'pag_controlador';
+$route['pag_controlador/'] = 'pag_controlador';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

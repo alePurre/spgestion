@@ -18,8 +18,8 @@
                 <br>    
                 <h4>Filtrar búsqueda:</h4>
                 <br> 
-                <div>
-                    <label>Rubro:</label>
+                <div >
+                     <label>--</lavel>
                     <select class="caja" placeholder="Seleccione un rubro">
                         <option value="volvo">Seleccione el Rubro</option>
                         <option value="saab">Saab</option>
@@ -27,63 +27,38 @@
                         <option value="audi">Audi</option>
                     </select>
                     <form>
-                        <label>Buscar:</lavel>
-                        <input type="text" name="detalle" placeholder="Códifgo de producto">
-                        <input type="text" name="detalle" placeholder="Nombre del producto">
+                        <label>--</lavel>
+                        <input type="text" name="detalle" placeholder="Códifgo de producto"> <label>--</lavel>
+                        <input type="text" name="detalle" placeholder="Nombre del producto"> <label>--</lavel>
                         <input type="submit" class="btn btn-info" value="Buscar" />
                     </form> 
                 </div>
-               <!--
-                <table>
-                     <thead>
-                    <tr>
-                        <th width="250px" style="text-align: center;">
-                            Codigo  
-                        </th>
-                        <th width="250" style="text-align: center;">
-                            Producto
-                        </th>
-                        <th width="80" style="text-align: center;">
-                            Cantidad
-                        </th>
-                        <th width="80" style="text-align: center;">
-                            Stock
-                        </th>
-                        <th width="10px" style="text-align: center;">
-                            Agregar
-                        </th>
-                    </tr>
-                </thead>
-                 <tr>
-                    <td width="200px" style="text-align: center;"> 
-                        <select>
-                           <option value="volvo">Seleccione codigo producto</option>
-                           <option value="saab">Saab</option>
-                           <option value="mercedes">Mercedes</option>
-                           <option value="audi">Audi</option>
-                         </select>
-                    </td>
-                    <td style="text-align: center;"> 
-                        <select>
-                         <option value="volvo">Seleccione producto</option>
-                         <option value="saab">Saab</option>
-                         <option value="mercedes">Mercedes</option>
-                         <option value="audi">Audi</option>
-                       </select>
-                     </td>
-                 <td style="text-align: center;">
-                        <input type="text" value="0" style="width:40px">
-                    </td>
-                    <td style="text-align: center;">
-                        <input type="text" value="0" style="width:40px">
-                    </td>
-                    <td style="text-align: center;">
-                       <a href="editar_pedido.php"><span style=" width: 20px" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                      
-                    </td>
-                </tr>
-            </table>
-               -->
+               <div >
+               <?php if (count($stock_controlador)): ?>
+                    <table class="table tableborder">
+                       <thead>
+                          <tr>
+                            <th style="text-align: center;"> Código </th>
+                            <th style="text-align: center;"> Descripción </th>
+                            <th style="text-align: center;"> Cantidad </th>
+                            <th style="text-align: center;"> Agregar </th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <?php foreach($stock_controlador as $item): ?>
+                             <tr>
+                                <td style="text-align: center; width: 25%"> <?php echo $item->idProducto ?> </td> 
+                                <td style="text-align: center; width: 25%"> <?php echo $item->detalle ?> </td>
+                                <td style="text-align: center; width: 25%"> <input type="text" id="cantSol"></td>
+                                <td style="text-align: center;"><a class="btn" href="<?php echo base_url() ?>stock_controlador/ver/<?php echo $item->idProducto ?>"> <span style=" width: 20px" class="glyphicon glyphicon-plus" aria-hidden="true"> </a> </td>
+                            </tr>
+                          <?php endforeach; ?>
+                       </tbody>
+                    </table>
+                   <?php else: ?>
+                    <p> No hay productos cargados </p>
+               <?php endif; ?>
+                </div   >
             </div>    
               
                <div class="tabla">

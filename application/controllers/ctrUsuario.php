@@ -18,8 +18,12 @@ class ctrUsuario extends CI_Controller {
    }
    
     public function nuevoPedido() {
+      $ordenar_por="stock";
+      $data = array();
+      $this->load->model('stock_model');
+      $data['stock_controlador'] = $this->stock_model->obtener_todos($ordenar_por);
       $this->load->view('vistas/usuario/header');
-      $this->load->view('vistas/usuario/nuevo_pedido');
+      $this->load->view('vistas/usuario/nuevo_pedido', $data);
       $this->load->view('vistas/usuario/footer');
    }
    
@@ -42,5 +46,16 @@ class ctrUsuario extends CI_Controller {
          $this->load->view('vistas/usuario/footer');
       
    }
+   
+   public function buscar(){
+	  $nombre = $this->input->post('detalle','idProducto');
+      $data = array();
+      $this->load->model('stock_model');
+      $data['stock_controlador'] = $this->stock_model->buscarProducto($nombre);
+      $this->load->view('vistas/administracion/header');
+      $this->load->view('vistas/administracion/index', $data);
+      $this->load->view('vistas/administracion/footer');
+   }
+   
    
 }

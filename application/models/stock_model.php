@@ -33,28 +33,26 @@ class Stock_model extends CI_Model {
    }
    public function obtener_todos(){
 	   
-		//Consulta con SP
-		/*
-	   if($this->db->query("CALL stockTotal()"))
-        {
-            echo 'listo';
-			$resultado = $this->db->query("CALL stockTotal()");
-			//$resultado = call stockTotal();
-			echo $resultado;
-        }else{
-            show_error('Error!');
-		}
-		*/
-	   
-      $this->db->select('idProducto, stock, detalle, cantMin, cantMax');
-      $this->db->from('productos');
-      $this->db->order_by('stock', 'asc');
-      $consulta = $this->db->get();
-      $resultado = $consulta->result();
-      return $resultado;
-	  
+    $this->db->select('idProducto, stock, detalle, cantMin, cantMax');
+    $this->db->from('productos');
+    $this->db->order_by('stock', 'asc');
+    $consulta = $this->db->get();
+    $resultado = $consulta->result();
+    return $resultado;
+    //Consulta con SP
+    /*
+        if($this->db->query("CALL stockTotal()"))
+     {
+         echo 'listo';
+                     $resultado = $this->db->query("CALL stockTotal()");
+                     //$resultado = call stockTotal();
+                     echo $resultado;
+     }else{
+         show_error('Error!');
+             }
+    */ 
    }
-	public function buscarProducto($detalle){
+	public function buscarProducto($detalle, $porpagina,$segmento){
 	  /*call myProcedure($detalle)*/
       $this->db->select('idProducto, detalle, stock, cantMin, cantMax');
       $this->db->from('productos');

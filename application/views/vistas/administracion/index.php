@@ -13,11 +13,11 @@
  <table class="table tableborder">
     <thead>
        <tr>
-          <th> Detalle </th>
-		  <th> Stock </th>
-          <th> cantMax </th>
-          <th> cantMin </th>
-		  <th> Accion </th>
+        <th> Detalle </th>
+        <th> Stock </th>
+        <th> cantMax </th>
+        <th> cantMin </th>
+        <th> Accion </th>
        </tr>
     </thead>
     <tbody>
