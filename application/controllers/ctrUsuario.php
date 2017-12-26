@@ -69,6 +69,18 @@ class ctrUsuario extends CI_Controller {
       $this->load->view('vistas/usuario/nuevo_pedido', $data);
      // $this->load->view('vistas/usuario/footer');
    }
-   
-   
+}
+
+class NuevoPedido {
+    public $descripcion;
+    public $cantidad;
+    public $fecha;
+    public $autor;
+    
+    public function guardarPedido($descripcion, $cantidad, $fecha, $autor){
+        $this->descripcion = $descripcion;
+        $this->cantidad=$cantidad;
+        $this->fecha=$fecha;
+        $this->autor=$autor;
+   }
 }
