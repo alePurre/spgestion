@@ -52,7 +52,7 @@ class Stock_model extends CI_Model {
              }
     */ 
    }
-	public function buscarProducto($detalle, $porpagina,$segmento){
+	public function buscarProducto($detalle){
 	  /*call myProcedure($detalle)*/
       $this->db->select('idProducto, detalle, stock, cantMin, cantMax');
       $this->db->from('productos');

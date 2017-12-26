@@ -24,7 +24,20 @@ class ctrUsuario extends CI_Controller {
       $data['stock_controlador'] = $this->stock_model->obtener_todos($ordenar_por);
       $this->load->view('vistas/usuario/header');
       $this->load->view('vistas/usuario/nuevo_pedido', $data);
-      $this->load->view('vistas/usuario/footer');
+      //$this->load->view('vistas/usuario/footer');
+   }
+   public function guardar_pedido_usuario($idProducto=null){
+      if($this->input->post()){
+         $detalle = $this->input->post('detalle');
+         $stock = $this->input->post('stock');
+         $cantMax = $this->input->post('cantMax');
+         $cantMin = $this->input->post('cantMin');
+         $this->load->model('stock_model');
+         $this->stock_model->guardar($detalle, $stock, $cantMax, $cantMin, $idProducto);
+         redirect('stock_controlador');
+      }else{
+         $this->guardar();
+      } 
    }
    
      public function pedidosPendientes() {
@@ -48,13 +61,13 @@ class ctrUsuario extends CI_Controller {
    }
    
    public function buscar(){
-	  $nombre = $this->input->post('detalle','idProducto');
+    $nombre = $this->input->post('detalle','idProducto');
       $data = array();
       $this->load->model('stock_model');
       $data['stock_controlador'] = $this->stock_model->buscarProducto($nombre);
-      $this->load->view('vistas/administracion/header');
-      $this->load->view('vistas/administracion/index', $data);
-      $this->load->view('vistas/administracion/footer');
+      $this->load->view('vistas/usuario/header');
+      $this->load->view('vistas/usuario/nuevo_pedido', $data);
+     // $this->load->view('vistas/usuario/footer');
    }
    
    

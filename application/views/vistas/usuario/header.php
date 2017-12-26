@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <head>
+    
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        var fila=0;
+        arreglo = new array();
+        var cols= 2;
+        
+       // for (var i = 0; i<cols; i++){
+        //    arreglo[i]=[];
+       // }
+        function agregarLinea(id, desc){
+               
+                var col = 0;
+             
+                var tabla = '<tr><td name="'+id+'">'+id+'</td><td name="'+desc+'">'+desc+'</td><td><input type="text" name="'+id+'" required="required" value=0 style="width:70px;"></td><td>Editar/Eliminar</td></tr>';
+                $("#agregar").append(tabla);
+                //Cargo un arreglo bidimensional
+                arreglo[fila][col] = id;
+                col = col + 1;
+                arreglo[fila][col]= desc;
+                fila = fila + 1 ;
+                 console.log(arreglo);
+        };  
+              
+            
+            
+        </script>
     <meta charset="utf-8">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">

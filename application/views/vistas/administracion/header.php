@@ -7,7 +7,6 @@
     <title>SPgestion</title>
 
     <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" href="<?php echo base_url('vendors/bootstrap/dist/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
@@ -16,18 +15,7 @@
     <link rel="stylesheet" href="<?php echo base_url('vendors/bootstrap/dist/css/bootstrap-theme.css'); ?>" media="screen" >
     <link rel="stylesheet" href="<?php echo base_url('assets/front-end/css/custom.css'); ?>"> 
 
-    <!-- Carga estilos grocery_CRUD solo si llega la variable css_files -->
-    <?php if (isset($css_files)): ?>
-    <?php foreach($css_files as $file): ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-    <?php endforeach; ?>
-    <?php endif; ?>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/front-end/js/html5shiv.js"></script>
-    <script src="assets/front-end/js/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body class="home" style="margin-top:100px;">
