@@ -28,14 +28,16 @@ class ctrUsuario extends CI_Controller {
    }
    public function guardar_pedido_usuario($idProducto=null){
       if($this->input->post()){
+         $arreglo_linea =
          $detalle = $this->input->post('detalle');
          $stock = $this->input->post('stock');
          $cantMax = $this->input->post('cantMax');
          $cantMin = $this->input->post('cantMin');
-         $this->load->model('stock_model');
-         $this->stock_model->guardar($detalle, $stock, $cantMax, $cantMin, $idProducto);
-         redirect('stock_controlador');
-      }else{
+         $this->load->model('usuario_model');
+         $this->stock_model->guardar_pedido_usuario($obra, $descripcion, $fechaEmision, $idEstadoPedido, $idUsuarioCrea, $idUsuarioEntrega, $fechaEntrega, $idPedidoDeposito=null);
+         //redirect('stock_controlador');
+      }
+      else{
          $this->guardar();
       } 
    }
@@ -71,16 +73,18 @@ class ctrUsuario extends CI_Controller {
    }
 }
 
+
 class NuevoPedido {
-    public $descripcion;
-    public $cantidad;
-    public $fecha;
-    public $autor;
-    
-    public function guardarPedido($descripcion, $cantidad, $fecha, $autor){
-        $this->descripcion = $descripcion;
-        $this->cantidad=$cantidad;
-        $this->fecha=$fecha;
-        $this->autor=$autor;
-   }
+        public $descripcion;
+        public $cantidad;
+        public $fecha;
+        public $autor;
+        public $lineapedido;
+
+        public function guardarPedido($descripcion, $cantidad, $fecha, $autor){
+            $this->descripcion = $descripcion;
+            $this->cantidad=$cantidad;
+            $this->fecha=$fecha;
+            $this->autor=$autor;
+       }
 }

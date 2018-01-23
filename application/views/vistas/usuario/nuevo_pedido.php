@@ -1,3 +1,6 @@
+<?php
+    require_once base_url().'controllers/ctrUsuario.php';
+?>
 <div>
     <table>
          <tr height="80px">
@@ -34,6 +37,9 @@
         </form>            
     </div>
     <div>
+        <?php 
+            print_r($a->lineapedido);
+        ?>
         <?php if (count($stock_controlador)): ?>
         <table class="table tableborder">
            <thead>
@@ -60,7 +66,7 @@
         <?php endif; ?>
     </div>
     <div class="tabla">
-        <form method="post" action="<?php echo base_url() ?>ctrUsuario/guardar_pedido_usuario/<?php ?>">
+        <form method="post" action="<?php echo base_url() ?>borrar<?php ?>">
             <table class="table table-bordered">
                  <thead>
                      <tr>
@@ -98,4 +104,26 @@
 
 
 </body>
+ <script type="text/javascript">
+      
+        var fila=0;
+      
+        var cols= 2;
+        
+       // for (var i = 0; i<cols; i++){
+        //    arreglo[i]=[];
+       // }
+        function agregarLinea(id, desc){
+                var tabla = '<tr><td><input type="text" name="'+id+'" value="'+id+'" readonly="readonly"></td><td name="'+desc+'">'+desc+'</td><td><input type="text" name="cant'+id+'" required="required" value=0 style="width:70px;"></td><td>Editar/Eliminar</td></tr>';
+                $("#agregar").append(tabla);
+                
+               //Cargo un arreglo bidimensional
+               /* arreglo[fila][col] = id;
+                col = col + 1;
+                arreglo[fila][col]= desc;
+                fila = fila + 1 ;
+                console.log(arreglo);*/
+               
+        };     
+    </script>
 </html>
